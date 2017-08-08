@@ -1,0 +1,84 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: leapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: leapp-centos6
+    spec:
+      serviceAccountName: useroot
+      containers:
+      - name: leapp-container
+        image: gazdown/leapp-scratch:6
+
+        volumeMounts:
+        - mountPath: "/etc"
+          name: etc
+        - mountPath: "/bin"
+          name: bin
+        - mountPath: "/home"
+          name: home
+        - mountPath: "/lib"
+          name: lib
+        - mountPath: "/lib64"
+          name: lib64
+        - mountPath: "/media"
+          name: media
+        - mountPath: "/opt"
+          name: opt
+        - mountPath: "/root"
+          name: root
+        - mountPath: "/sbin"
+          name: sbin
+        - mountPath: "/srv"
+          name: srv
+        - mountPath: "/usr"
+          name: usr
+        - mountPath: "/var"
+          name: var
+        - mountPath: "/sys/fs/cgroup"
+          name: cgroup
+
+      volumes:
+        - name: etc
+          persistentVolumeClaim:
+            claimName: etc-claim
+        - name: bin
+          persistentVolumeClaim:
+            claimName: bin-claim
+        - name: home
+          persistentVolumeClaim:
+            claimName: home-claim
+        - name: lib
+          persistentVolumeClaim:
+            claimName: lib-claim
+        - name: lib64
+          persistentVolumeClaim:
+            claimName: lib64-claim
+        - name: media
+          persistentVolumeClaim:
+            claimName: media-claim
+        - name: opt
+          persistentVolumeClaim:
+            claimName: opt-claim
+        - name: root
+          persistentVolumeClaim:
+            claimName: root-claim
+        - name: sbin
+          persistentVolumeClaim:
+            claimName: sbin-claim
+        - name: srv
+          persistentVolumeClaim:
+            claimName: srv-claim
+        - name: usr
+          persistentVolumeClaim:
+            claimName: usr-claim
+        - name: var
+          persistentVolumeClaim:
+            claimName: var-claim
+        - name: cgroup
+          persistentVolumeClaim:
+            claimName: cgroup-claim

@@ -1,0 +1,406 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: etc-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/etc"
+    server: "192.168.33.10"
+
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: etc-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: etc-pv
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: bin-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/bin"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: bin-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: bin-pv
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: home-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/home"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: home-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: home-pv
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: lib-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/lib"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: lib-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: lib-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: lib64-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/lib64"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: lib64-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: lib64-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: media-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/media"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: media-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: media-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: opt-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/opt"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: opt-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: opt-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: root-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/root"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: root-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: root-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sbin-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/sbin"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sbin-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: sbin-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: srv-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/srv"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: srv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: srv-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: usr-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/usr"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: usr-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: usr-pv
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: var-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: "/vagrant_data/container_centos6-app-vm/var"
+    server: "192.168.33.10"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: var-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: var-pv
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: cgroup-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/sys/fs/cgroup"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cgroup-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: cgroup-pv
+---
